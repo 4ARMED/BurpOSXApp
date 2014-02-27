@@ -1,4 +1,4 @@
-= Installation
+# Installation
 
 I will assume Burp version 1.5.21 but substitute commands below with correct version)
 
