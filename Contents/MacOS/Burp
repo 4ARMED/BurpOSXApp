@@ -1,3 +1,7 @@
 #!/bin/sh
 
-/usr/bin/java -XX:MaxPermSize=2G -Xmx2g -jar /Applications/Burp.app/Contents/MacOS/burpsuite_pro.jar
+#Determine Most Current Version of Burp
+CURRENT=`find /Applications/Burp.app/Contents/MacOS/ -type f -name burpsuite_pro\*.jar -print0 | xargs -0 stat -f "%m %N" | sort -rn | head -1 | cut -f2- -d" "`
+
+
+/usr/bin/java -XX:MaxPermSize=2G -Xmx2g -jar $CURRENT
